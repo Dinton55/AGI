@@ -135,6 +135,9 @@ protected:
 	FORCEINLINE void SetStateToIdle() { P2CurrentState = EP2CurrentState::IDLE; }
 	FORCEINLINE void SetStateToCrouch() { P2CurrentState = EP2CurrentState::CROUCHING; }
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Shield")
+		class UStaticMeshComponent* ShieldMesh;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

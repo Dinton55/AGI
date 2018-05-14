@@ -115,6 +115,12 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Foot_Collision")
 		class USphereComponent* RightFoot;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Health")
+		int health;
+
+	UFUNCTION(BlueprintCallable, Category = "Health")
+		void P2_TakeDamage(int Damage) { health -= Damage; };
+
 	// States
 
 	/// Moving
@@ -146,9 +152,21 @@ protected:
 
 	// ABILITY DURATIONS
 
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Shield")
 		class UStaticMeshComponent* ShieldMesh;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Shield")
+		float ShieldCapacity;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Shield")
+		float ShieldRegenRate;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Shield")
+		float ShieldFallRate;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Shield")
+		bool bShieldUseable;
 public:
 	AAGI_FightingGameCharacter();
 };

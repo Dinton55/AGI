@@ -18,6 +18,15 @@ struct FHitResult;
 
 #define AGI_FightingGame_Source_AGI_FightingGame_AGI_FightingGameCharacter_h_40_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execP2_TakeDamage) \
+	{ \
+		P_GET_PROPERTY(UIntProperty,Z_Param_Damage); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->P2_TakeDamage(Z_Param_Damage); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execOnLeftHandOverlapBegin) \
 	{ \
 		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComp); \
@@ -34,6 +43,15 @@ struct FHitResult;
 
 
 #define AGI_FightingGame_Source_AGI_FightingGame_AGI_FightingGameCharacter_h_40_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execP2_TakeDamage) \
+	{ \
+		P_GET_PROPERTY(UIntProperty,Z_Param_Damage); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->P2_TakeDamage(Z_Param_Damage); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execOnLeftHandOverlapBegin) \
 	{ \
@@ -110,7 +128,11 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AAGI_FightingGameCharacter); \
 	FORCEINLINE static uint32 __PPO__RightHand() { return STRUCT_OFFSET(AAGI_FightingGameCharacter, RightHand); } \
 	FORCEINLINE static uint32 __PPO__LeftFoot() { return STRUCT_OFFSET(AAGI_FightingGameCharacter, LeftFoot); } \
 	FORCEINLINE static uint32 __PPO__RightFoot() { return STRUCT_OFFSET(AAGI_FightingGameCharacter, RightFoot); } \
-	FORCEINLINE static uint32 __PPO__ShieldMesh() { return STRUCT_OFFSET(AAGI_FightingGameCharacter, ShieldMesh); }
+	FORCEINLINE static uint32 __PPO__health() { return STRUCT_OFFSET(AAGI_FightingGameCharacter, health); } \
+	FORCEINLINE static uint32 __PPO__ShieldMesh() { return STRUCT_OFFSET(AAGI_FightingGameCharacter, ShieldMesh); } \
+	FORCEINLINE static uint32 __PPO__ShieldCapacity() { return STRUCT_OFFSET(AAGI_FightingGameCharacter, ShieldCapacity); } \
+	FORCEINLINE static uint32 __PPO__ShieldRegenRate() { return STRUCT_OFFSET(AAGI_FightingGameCharacter, ShieldRegenRate); } \
+	FORCEINLINE static uint32 __PPO__ShieldFallRate() { return STRUCT_OFFSET(AAGI_FightingGameCharacter, ShieldFallRate); }
 
 
 #define AGI_FightingGame_Source_AGI_FightingGame_AGI_FightingGameCharacter_h_37_PROLOG

@@ -21,6 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeAGI_FightingGameCharacter() {}
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+	AGI_FIGHTINGGAME_API UFunction* Z_Construct_UFunction_AAGI_FightingGameCharacter_P2_TakeDamage();
 	AGI_FIGHTINGGAME_API UClass* Z_Construct_UClass_AAGI_FightingGameCharacter_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
@@ -94,6 +95,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ECurrentState(ECurrentSt
 		UClass* Class = AAGI_FightingGameCharacter::StaticClass();
 		static const TNameNativePtrPair<ANSICHAR> AnsiFuncs[] = {
 			{ "OnLeftHandOverlapBegin", (Native)&AAGI_FightingGameCharacter::execOnLeftHandOverlapBegin },
+			{ "P2_TakeDamage", (Native)&AAGI_FightingGameCharacter::execP2_TakeDamage },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, AnsiFuncs, ARRAY_COUNT(AnsiFuncs));
 	}
@@ -132,6 +134,28 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ECurrentState(ECurrentSt
 		}
 		return ReturnFunction;
 	}
+	UFunction* Z_Construct_UFunction_AAGI_FightingGameCharacter_P2_TakeDamage()
+	{
+		struct AGI_FightingGameCharacter_eventP2_TakeDamage_Parms
+		{
+			int32 Damage;
+		};
+		UObject* Outer = Z_Construct_UClass_AAGI_FightingGameCharacter();
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("P2_TakeDamage"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04080401, 65535, sizeof(AGI_FightingGameCharacter_eventP2_TakeDamage_Parms));
+			UProperty* NewProp_Damage = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Damage"), RF_Public|RF_Transient|RF_MarkAsNative) UUnsizedIntProperty(CPP_PROPERTY_BASE(Damage, AGI_FightingGameCharacter_eventP2_TakeDamage_Parms), 0x0010000000000080);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Health"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("AGI_FightingGameCharacter.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_AAGI_FightingGameCharacter_NoRegister()
 	{
 		return AAGI_FightingGameCharacter::StaticClass();
@@ -150,8 +174,13 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ECurrentState(ECurrentSt
 				OuterClass->ClassFlags |= (EClassFlags)0x20800080u;
 
 				OuterClass->LinkChild(Z_Construct_UFunction_AAGI_FightingGameCharacter_OnLeftHandOverlapBegin());
+				OuterClass->LinkChild(Z_Construct_UFunction_AAGI_FightingGameCharacter_P2_TakeDamage());
 
+				UProperty* NewProp_ShieldFallRate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ShieldFallRate"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(ShieldFallRate, AAGI_FightingGameCharacter), 0x0020080000000005);
+				UProperty* NewProp_ShieldRegenRate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ShieldRegenRate"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(ShieldRegenRate, AAGI_FightingGameCharacter), 0x0020080000000005);
+				UProperty* NewProp_ShieldCapacity = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ShieldCapacity"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(ShieldCapacity, AAGI_FightingGameCharacter), 0x0020080000000005);
 				UProperty* NewProp_ShieldMesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ShieldMesh"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(ShieldMesh, AAGI_FightingGameCharacter), 0x00200800000a000d, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+				UProperty* NewProp_health = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("health"), RF_Public|RF_Transient|RF_MarkAsNative) UUnsizedIntProperty(CPP_PROPERTY_BASE(health, AAGI_FightingGameCharacter), 0x0020080000020005);
 				UProperty* NewProp_RightFoot = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("RightFoot"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(RightFoot, AAGI_FightingGameCharacter), 0x00200800000a000d, Z_Construct_UClass_USphereComponent_NoRegister());
 				UProperty* NewProp_LeftFoot = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("LeftFoot"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(LeftFoot, AAGI_FightingGameCharacter), 0x00200800000a000d, Z_Construct_UClass_USphereComponent_NoRegister());
 				UProperty* NewProp_RightHand = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("RightHand"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(RightHand, AAGI_FightingGameCharacter), 0x00200800000a000d, Z_Construct_UClass_USphereComponent_NoRegister());
@@ -169,6 +198,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ECurrentState(ECurrentSt
 				UProperty* NewProp_CurrentState_Underlying = new(EC_InternalUseOnlyConstructor, NewProp_CurrentState, TEXT("UnderlyingType"), RF_Public|RF_Transient|RF_MarkAsNative) UByteProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000);
 				UProperty* NewProp_MovementSpeed = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MovementSpeed"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(MovementSpeed, AAGI_FightingGameCharacter), 0x0020080000000005);
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AAGI_FightingGameCharacter_OnLeftHandOverlapBegin(), "OnLeftHandOverlapBegin"); // 1417714947
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AAGI_FightingGameCharacter_P2_TakeDamage(), "P2_TakeDamage"); // 1772619433
 				OuterClass->ClassConfigName = FName(TEXT("Game"));
 				static TCppClassTypeInfo<TCppClassTypeTraits<AAGI_FightingGameCharacter> > StaticCppClassTypeInfo;
 				OuterClass->SetCppTypeInfo(&StaticCppClassTypeInfo);
@@ -178,10 +208,18 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ECurrentState(ECurrentSt
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("AGI_FightingGameCharacter.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("AGI_FightingGameCharacter.h"));
+				MetaData->SetValue(NewProp_ShieldFallRate, TEXT("Category"), TEXT("Shield"));
+				MetaData->SetValue(NewProp_ShieldFallRate, TEXT("ModuleRelativePath"), TEXT("AGI_FightingGameCharacter.h"));
+				MetaData->SetValue(NewProp_ShieldRegenRate, TEXT("Category"), TEXT("Shield"));
+				MetaData->SetValue(NewProp_ShieldRegenRate, TEXT("ModuleRelativePath"), TEXT("AGI_FightingGameCharacter.h"));
+				MetaData->SetValue(NewProp_ShieldCapacity, TEXT("Category"), TEXT("Shield"));
+				MetaData->SetValue(NewProp_ShieldCapacity, TEXT("ModuleRelativePath"), TEXT("AGI_FightingGameCharacter.h"));
 				MetaData->SetValue(NewProp_ShieldMesh, TEXT("Category"), TEXT("Shield"));
 				MetaData->SetValue(NewProp_ShieldMesh, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_ShieldMesh, TEXT("ModuleRelativePath"), TEXT("AGI_FightingGameCharacter.h"));
 				MetaData->SetValue(NewProp_ShieldMesh, TEXT("ToolTip"), TEXT("ABILITY DURATIONS"));
+				MetaData->SetValue(NewProp_health, TEXT("Category"), TEXT("Health"));
+				MetaData->SetValue(NewProp_health, TEXT("ModuleRelativePath"), TEXT("AGI_FightingGameCharacter.h"));
 				MetaData->SetValue(NewProp_RightFoot, TEXT("Category"), TEXT("Foot_Collision"));
 				MetaData->SetValue(NewProp_RightFoot, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_RightFoot, TEXT("ModuleRelativePath"), TEXT("AGI_FightingGameCharacter.h"));
@@ -228,7 +266,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ECurrentState(ECurrentSt
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AAGI_FightingGameCharacter, 2551578706);
+	IMPLEMENT_CLASS(AAGI_FightingGameCharacter, 1579955932);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AAGI_FightingGameCharacter(Z_Construct_UClass_AAGI_FightingGameCharacter, &AAGI_FightingGameCharacter::StaticClass, TEXT("/Script/AGI_FightingGame"), TEXT("AAGI_FightingGameCharacter"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AAGI_FightingGameCharacter);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

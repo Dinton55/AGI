@@ -48,9 +48,11 @@ AAGI_FightingGameCharacter::AAGI_FightingGameCharacter()
 
 
 	ShieldMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Shield"));
-	ShieldMesh->SetupAttachment(GetCapsuleComponent());
-	ShieldMesh->SetRelativeLocation(FVector::ZeroVector);
 	ShieldMesh->SetVisibility(false);
+	bShieldUseable = true;
+
+	health = 100;
+	ShieldCapacity = 100.0f;
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -121,6 +123,18 @@ void AAGI_FightingGameCharacter::Tick(float DeltaSeconds)
 	const FVector LocalMove = FVector(0.0f,
 		CurrentRightSpeed, 0.0f);
 	AddActorWorldOffset(LocalMove);
+
+	if (CurrentState == ECurrentState::BLOCKING)
+	{
+		ShieldCapacity -= ShieldFallRate * DeltaSeconds;
+	}
+	else if (CurrentState != ECurrentState::BLOCKING &&
+		ShieldCapacity < 100.0f)
+	{
+		ShieldCapacity += ShieldRegenRate * DeltaSeconds;
+	}
+	UE_LOG(LogTemp, Warning, TEXT("SHIELD: %f"), ShieldCapacity);
+
 }
 
 void AAGI_FightingGameCharacter::OnLeftHandOverlapBegin(UPrimitiveComponent * OverlappedComp, 
@@ -199,7 +213,7 @@ void AAGI_FightingGameCharacter::CharacterJump()
 void AAGI_FightingGameCharacter::OnBlockPressed()
 {
 	CurrentState = ECurrentState::BLOCKING;
-	ShieldMesh->SetVisibility(true);
+	if (ShieldCapacity > 0.0f)	ShieldMesh->SetVisibility(true);
 }
 
 void AAGI_FightingGameCharacter::OnBlockReleased()

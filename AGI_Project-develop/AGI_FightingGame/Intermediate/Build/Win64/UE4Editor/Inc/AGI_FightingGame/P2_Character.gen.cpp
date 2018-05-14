@@ -20,6 +20,7 @@ void EmptyLinkFunctionForGeneratedCodeP2_Character() {}
 	AGI_FIGHTINGGAME_API UClass* Z_Construct_UClass_AP2_Character();
 	AGI_FIGHTINGGAME_API UClass* Z_Construct_UClass_AP2_Character_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
+	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 // End Cross Module References
 static UEnum* EP2CurrentState_StaticEnum()
@@ -132,6 +133,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EP2CurrentState(EP2Curre
 
 				OuterClass->LinkChild(Z_Construct_UFunction_AP2_Character_P2_TakeDamage());
 
+				UProperty* NewProp_ShieldMesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ShieldMesh"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(ShieldMesh, AP2_Character), 0x00200800000a000d, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 				UProperty* NewProp_health = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("health"), RF_Public|RF_Transient|RF_MarkAsNative) UUnsizedIntProperty(CPP_PROPERTY_BASE(health, AP2_Character), 0x0020080000020005);
 				UProperty* NewProp_RightFoot = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("RightFoot"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(RightFoot, AP2_Character), 0x00200800000a000d, Z_Construct_UClass_USphereComponent_NoRegister());
 				UProperty* NewProp_LeftFoot = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("LeftFoot"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(LeftFoot, AP2_Character), 0x00200800000a000d, Z_Construct_UClass_USphereComponent_NoRegister());
@@ -159,6 +161,9 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EP2CurrentState(EP2Curre
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("P2_Character.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("P2_Character.h"));
+				MetaData->SetValue(NewProp_ShieldMesh, TEXT("Category"), TEXT("Shield"));
+				MetaData->SetValue(NewProp_ShieldMesh, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_ShieldMesh, TEXT("ModuleRelativePath"), TEXT("P2_Character.h"));
 				MetaData->SetValue(NewProp_health, TEXT("Category"), TEXT("Health"));
 				MetaData->SetValue(NewProp_health, TEXT("ModuleRelativePath"), TEXT("P2_Character.h"));
 				MetaData->SetValue(NewProp_RightFoot, TEXT("Category"), TEXT("Foot_Collision"));
@@ -206,7 +211,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EP2CurrentState(EP2Curre
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AP2_Character, 3022574517);
+	IMPLEMENT_CLASS(AP2_Character, 4244575854);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AP2_Character(Z_Construct_UClass_AP2_Character, &AP2_Character::StaticClass, TEXT("/Script/AGI_FightingGame"), TEXT("AP2_Character"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AP2_Character);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

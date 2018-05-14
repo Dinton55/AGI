@@ -3,6 +3,7 @@
 #include "P2_Character.h"
 #include "TimerManager.h"
 #include "Components/SphereComponent.h"
+#include "Components/StaticMeshComponent.h"
 
 // Sets default values
 AP2_Character::AP2_Character()
@@ -30,6 +31,8 @@ AP2_Character::AP2_Character()
 
 	P2CurrentState = EP2CurrentState::IDLE;
 
+	ShieldMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Shield"));
+	ShieldMesh->SetVisibility(false);
 
 	health = 100;
 }
@@ -49,6 +52,8 @@ void AP2_Character::Tick(float DeltaTime)
 	const FVector LocalMove = FVector(0.0f,
 		CurrentRightSpeed, 0.0f);
 	AddActorWorldOffset(LocalMove);
+
+	
 }
 
 // Called to bind functionality to input
@@ -155,13 +160,13 @@ void AP2_Character::CharacterJump()
 void AP2_Character::OnBlockPressed()
 {
 	P2CurrentState = EP2CurrentState::BLOCKING;
-
+	ShieldMesh->SetVisibility(true);
 }
 
 void AP2_Character::OnBlockReleased()
 {
 	P2CurrentState = EP2CurrentState::IDLE;
-
+	ShieldMesh->SetVisibility(false);
 }
 
 // Idle Kick
