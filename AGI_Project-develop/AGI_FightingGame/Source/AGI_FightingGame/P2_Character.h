@@ -138,9 +138,24 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Shield")
 		class UStaticMeshComponent* ShieldMesh;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Shield")
+		float ShieldCapacity;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Shield")
+		float ShieldRegenRate;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Shield")
+		float ShieldFallRate;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Shield")
+		bool bShieldUseable;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Shield")
+		bool bShieldActive;
+
 public:	
 	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	virtual void Tick(float DeltaSeconds) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;

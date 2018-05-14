@@ -133,6 +133,13 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EP2CurrentState(EP2Curre
 
 				OuterClass->LinkChild(Z_Construct_UFunction_AP2_Character_P2_TakeDamage());
 
+				CPP_BOOL_PROPERTY_BITMASK_STRUCT(bShieldActive, AP2_Character);
+				UProperty* NewProp_bShieldActive = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("bShieldActive"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(bShieldActive, AP2_Character), 0x0020080000020015, CPP_BOOL_PROPERTY_BITMASK(bShieldActive, AP2_Character), sizeof(bool), true);
+				CPP_BOOL_PROPERTY_BITMASK_STRUCT(bShieldUseable, AP2_Character);
+				UProperty* NewProp_bShieldUseable = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("bShieldUseable"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(bShieldUseable, AP2_Character), 0x0020080000020015, CPP_BOOL_PROPERTY_BITMASK(bShieldUseable, AP2_Character), sizeof(bool), true);
+				UProperty* NewProp_ShieldFallRate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ShieldFallRate"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(ShieldFallRate, AP2_Character), 0x0020080000000005);
+				UProperty* NewProp_ShieldRegenRate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ShieldRegenRate"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(ShieldRegenRate, AP2_Character), 0x0020080000000005);
+				UProperty* NewProp_ShieldCapacity = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ShieldCapacity"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(ShieldCapacity, AP2_Character), 0x0020080000020015);
 				UProperty* NewProp_ShieldMesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ShieldMesh"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(ShieldMesh, AP2_Character), 0x00200800000a000d, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 				UProperty* NewProp_health = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("health"), RF_Public|RF_Transient|RF_MarkAsNative) UUnsizedIntProperty(CPP_PROPERTY_BASE(health, AP2_Character), 0x0020080000020005);
 				UProperty* NewProp_RightFoot = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("RightFoot"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(RightFoot, AP2_Character), 0x00200800000a000d, Z_Construct_UClass_USphereComponent_NoRegister());
@@ -161,6 +168,16 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EP2CurrentState(EP2Curre
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("P2_Character.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("P2_Character.h"));
+				MetaData->SetValue(NewProp_bShieldActive, TEXT("Category"), TEXT("Shield"));
+				MetaData->SetValue(NewProp_bShieldActive, TEXT("ModuleRelativePath"), TEXT("P2_Character.h"));
+				MetaData->SetValue(NewProp_bShieldUseable, TEXT("Category"), TEXT("Shield"));
+				MetaData->SetValue(NewProp_bShieldUseable, TEXT("ModuleRelativePath"), TEXT("P2_Character.h"));
+				MetaData->SetValue(NewProp_ShieldFallRate, TEXT("Category"), TEXT("Shield"));
+				MetaData->SetValue(NewProp_ShieldFallRate, TEXT("ModuleRelativePath"), TEXT("P2_Character.h"));
+				MetaData->SetValue(NewProp_ShieldRegenRate, TEXT("Category"), TEXT("Shield"));
+				MetaData->SetValue(NewProp_ShieldRegenRate, TEXT("ModuleRelativePath"), TEXT("P2_Character.h"));
+				MetaData->SetValue(NewProp_ShieldCapacity, TEXT("Category"), TEXT("Shield"));
+				MetaData->SetValue(NewProp_ShieldCapacity, TEXT("ModuleRelativePath"), TEXT("P2_Character.h"));
 				MetaData->SetValue(NewProp_ShieldMesh, TEXT("Category"), TEXT("Shield"));
 				MetaData->SetValue(NewProp_ShieldMesh, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_ShieldMesh, TEXT("ModuleRelativePath"), TEXT("P2_Character.h"));
@@ -211,7 +228,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EP2CurrentState(EP2Curre
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AP2_Character, 4244575854);
+	IMPLEMENT_CLASS(AP2_Character, 469497886);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AP2_Character(Z_Construct_UClass_AP2_Character, &AP2_Character::StaticClass, TEXT("/Script/AGI_FightingGame"), TEXT("AP2_Character"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AP2_Character);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

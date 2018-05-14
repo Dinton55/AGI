@@ -33,7 +33,10 @@ AP2_Character::AP2_Character()
 
 	ShieldMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Shield"));
 	ShieldMesh->SetVisibility(false);
+	bShieldUseable = true;
+	bShieldActive = false;
 
+	ShieldCapacity = 100.0f;
 	health = 100;
 }
 
@@ -45,15 +48,37 @@ void AP2_Character::BeginPlay()
 }
 
 // Called every frame
-void AP2_Character::Tick(float DeltaTime)
+void AP2_Character::Tick(float DeltaSeconds)
 {
-	Super::Tick(DeltaTime);
+	Super::Tick(DeltaSeconds);
 
 	const FVector LocalMove = FVector(0.0f,
 		CurrentRightSpeed, 0.0f);
 	AddActorWorldOffset(LocalMove);
 
-	
+	if (P2CurrentState == EP2CurrentState::BLOCKING &&
+		bShieldUseable)
+	{
+		bShieldActive = true;
+		ShieldCapacity -= ShieldFallRate * DeltaSeconds;
+	}
+	if (P2CurrentState != EP2CurrentState::BLOCKING &&
+		ShieldCapacity < 100.0f)
+	{
+		ShieldCapacity += ShieldRegenRate * DeltaSeconds;
+	}
+	if (ShieldCapacity <= 0.0f)
+	{
+		ShieldMesh->SetVisibility(false);
+		bShieldUseable = false;
+		bShieldActive = false;
+	}
+
+	if (!bShieldUseable)
+	{
+		ShieldCapacity += ShieldRegenRate * DeltaSeconds;
+		if (ShieldCapacity >= 100.0f) bShieldUseable = true;
+	}
 }
 
 // Called to bind functionality to input
@@ -190,14 +215,14 @@ void AP2_Character::Kick()
 		GetWorldTimerManager().SetTimer(
 			KickTimeHandle, this, &AP2_Character::SetStateToIdle, CrouchKickTime);
 	}
-	else if (P2CurrentState == EP2CurrentState::MOVING)
-	{
-		P2CurrentState = EP2CurrentState::MOVEKICK;
+	//else if (P2CurrentState == EP2CurrentState::MOVING)
+	//{
+	//	P2CurrentState = EP2CurrentState::MOVEKICK;
 
-		FTimerHandle KickTimeHandle;
-		GetWorldTimerManager().SetTimer(
-			KickTimeHandle, this, &AP2_Character::SetStateToIdle, MovingKickTime);
-	}
+	//	FTimerHandle KickTimeHandle;
+	//	GetWorldTimerManager().SetTimer(
+	//		KickTimeHandle, this, &AP2_Character::SetStateToIdle, MovingKickTime);
+	//}
 	else if (P2CurrentState == EP2CurrentState::JUMPING)
 	{
 		P2CurrentState = EP2CurrentState::JUMPKICK;
@@ -229,14 +254,14 @@ void AP2_Character::Punch()
 		GetWorldTimerManager().SetTimer(
 			PunchTimeHandle, this, &AP2_Character::SetStateToIdle, CrouchPunchTime);
 	}
-	else if (P2CurrentState == EP2CurrentState::MOVING)
-	{
-		P2CurrentState = EP2CurrentState::MOVEPUNCH;
+	//else if (P2CurrentState == EP2CurrentState::MOVING)
+	//{
+	//	P2CurrentState = EP2CurrentState::MOVEPUNCH;
 
-		FTimerHandle PunchTimeHandle;
-		GetWorldTimerManager().SetTimer(
-			PunchTimeHandle, this, &AP2_Character::SetStateToIdle, MovingPunchTime);
-	}
+	//	FTimerHandle PunchTimeHandle;
+	//	GetWorldTimerManager().SetTimer(
+	//		PunchTimeHandle, this, &AP2_Character::SetStateToIdle, MovingPunchTime);
+	//}
 	else if (P2CurrentState == EP2CurrentState::JUMPING)
 	{
 		P2CurrentState = EP2CurrentState::JUMPPUNCH;

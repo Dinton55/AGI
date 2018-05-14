@@ -50,6 +50,7 @@ AAGI_FightingGameCharacter::AAGI_FightingGameCharacter()
 	ShieldMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Shield"));
 	ShieldMesh->SetVisibility(false);
 	bShieldUseable = true;
+	bShieldActive = false;
 
 	health = 100;
 	ShieldCapacity = 100.0f;
@@ -124,17 +125,30 @@ void AAGI_FightingGameCharacter::Tick(float DeltaSeconds)
 		CurrentRightSpeed, 0.0f);
 	AddActorWorldOffset(LocalMove);
 
-	if (CurrentState == ECurrentState::BLOCKING)
+	if (CurrentState == ECurrentState::BLOCKING && 
+		bShieldUseable)
 	{
+		bShieldActive = true;
 		ShieldCapacity -= ShieldFallRate * DeltaSeconds;
 	}
-	else if (CurrentState != ECurrentState::BLOCKING &&
+	if (CurrentState != ECurrentState::BLOCKING &&
 		ShieldCapacity < 100.0f)
 	{
 		ShieldCapacity += ShieldRegenRate * DeltaSeconds;
 	}
-	UE_LOG(LogTemp, Warning, TEXT("SHIELD: %f"), ShieldCapacity);
+	if (ShieldCapacity <= 0.0f)
+	{
 
+		ShieldMesh->SetVisibility(false);
+		bShieldUseable = false;
+		bShieldActive = false;
+	}
+
+	if (!bShieldUseable)
+	{
+		ShieldCapacity += ShieldRegenRate * DeltaSeconds;
+		if (ShieldCapacity >= 100.0f) bShieldUseable = true;
+	}
 }
 
 void AAGI_FightingGameCharacter::OnLeftHandOverlapBegin(UPrimitiveComponent * OverlappedComp, 
@@ -213,13 +227,17 @@ void AAGI_FightingGameCharacter::CharacterJump()
 void AAGI_FightingGameCharacter::OnBlockPressed()
 {
 	CurrentState = ECurrentState::BLOCKING;
-	if (ShieldCapacity > 0.0f)	ShieldMesh->SetVisibility(true);
+	if (bShieldUseable)
+	{
+		ShieldMesh->SetVisibility(true);
+	}
 }
 
 void AAGI_FightingGameCharacter::OnBlockReleased()
 {
 	CurrentState = ECurrentState::IDLE;
 	ShieldMesh->SetVisibility(false);
+	bShieldActive = false;
 }
 
 // Idle Kick
@@ -243,14 +261,14 @@ void AAGI_FightingGameCharacter::Kick()
 		GetWorldTimerManager().SetTimer(
 			KickTimeHandle, this, &AAGI_FightingGameCharacter::SetStateToIdle, CrouchKickTime);
 	}
-	else if (CurrentState == ECurrentState::MOVING)
-	{
-		CurrentState = ECurrentState::MOVEKICK;
+	//else if (CurrentState == ECurrentState::MOVING)
+	//{
+	//	CurrentState = ECurrentState::MOVEKICK;
 
-		FTimerHandle KickTimeHandle;
-		GetWorldTimerManager().SetTimer(
-			KickTimeHandle, this, &AAGI_FightingGameCharacter::SetStateToIdle, MovingKickTime);
-	}
+	//	FTimerHandle KickTimeHandle;
+	//	GetWorldTimerManager().SetTimer(
+	//		KickTimeHandle, this, &AAGI_FightingGameCharacter::SetStateToIdle, MovingKickTime);
+	//}
 	else if (CurrentState == ECurrentState::JUMPING)
 	{
 		CurrentState = ECurrentState::JUMPKICK;
@@ -285,14 +303,14 @@ void AAGI_FightingGameCharacter::Punch()
 	}
 
 	// May get rid of these.
-	else if (CurrentState == ECurrentState::MOVING)
-	{
-		CurrentState = ECurrentState::MOVEPUNCH;
+	//else if (CurrentState == ECurrentState::MOVING)
+	//{
+	//	CurrentState = ECurrentState::MOVEPUNCH;
 
-		FTimerHandle PunchTimeHandle;
-		GetWorldTimerManager().SetTimer(
-			PunchTimeHandle, this, &AAGI_FightingGameCharacter::SetStateToIdle, MovingPunchTime);
-	}
+	//	FTimerHandle PunchTimeHandle;
+	//	GetWorldTimerManager().SetTimer(
+	//		PunchTimeHandle, this, &AAGI_FightingGameCharacter::SetStateToIdle, MovingPunchTime);
+	//}
 	else if (CurrentState == ECurrentState::JUMPING)
 	{
 		CurrentState = ECurrentState::JUMPPUNCH;

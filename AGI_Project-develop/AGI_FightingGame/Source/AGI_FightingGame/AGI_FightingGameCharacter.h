@@ -156,7 +156,7 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Shield")
 		class UStaticMeshComponent* ShieldMesh;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Shield")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Shield")
 		float ShieldCapacity;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Shield")
@@ -167,6 +167,9 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Shield")
 		bool bShieldUseable;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Shield")
+		bool bShieldActive;
 public:
 	AAGI_FightingGameCharacter();
 };

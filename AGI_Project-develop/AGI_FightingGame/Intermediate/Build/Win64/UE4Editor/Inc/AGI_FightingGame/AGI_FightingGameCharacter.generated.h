@@ -132,7 +132,9 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AAGI_FightingGameCharacter); \
 	FORCEINLINE static uint32 __PPO__ShieldMesh() { return STRUCT_OFFSET(AAGI_FightingGameCharacter, ShieldMesh); } \
 	FORCEINLINE static uint32 __PPO__ShieldCapacity() { return STRUCT_OFFSET(AAGI_FightingGameCharacter, ShieldCapacity); } \
 	FORCEINLINE static uint32 __PPO__ShieldRegenRate() { return STRUCT_OFFSET(AAGI_FightingGameCharacter, ShieldRegenRate); } \
-	FORCEINLINE static uint32 __PPO__ShieldFallRate() { return STRUCT_OFFSET(AAGI_FightingGameCharacter, ShieldFallRate); }
+	FORCEINLINE static uint32 __PPO__ShieldFallRate() { return STRUCT_OFFSET(AAGI_FightingGameCharacter, ShieldFallRate); } \
+	FORCEINLINE static uint32 __PPO__bShieldUseable() { return STRUCT_OFFSET(AAGI_FightingGameCharacter, bShieldUseable); } \
+	FORCEINLINE static uint32 __PPO__bShieldActive() { return STRUCT_OFFSET(AAGI_FightingGameCharacter, bShieldActive); }
 
 
 #define AGI_FightingGame_Source_AGI_FightingGame_AGI_FightingGameCharacter_h_37_PROLOG
