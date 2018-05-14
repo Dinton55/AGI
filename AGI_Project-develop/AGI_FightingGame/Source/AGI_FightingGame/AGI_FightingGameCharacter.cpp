@@ -38,13 +38,17 @@ AAGI_FightingGameCharacter::AAGI_FightingGameCharacter()
 	LeftFoot->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	RightFoot->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
+	LeftHand->SetRelativeLocation(FVector::ZeroVector);
+	RightHand->SetRelativeLocation(FVector::ZeroVector);
+	LeftFoot->SetRelativeLocation(FVector::ZeroVector);
+	RightFoot->SetRelativeLocation(FVector::ZeroVector);
 
 	CurrentState = ECurrentState::IDLE;
 	StateToBe = ECurrentState::IDLE;
 
 
 	ShieldMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Shield"));
-	ShieldMesh->SetupAttachment(RootComponent);
+	ShieldMesh->SetupAttachment(GetCapsuleComponent());
 	ShieldMesh->SetRelativeLocation(FVector::ZeroVector);
 	ShieldMesh->SetVisibility(false);
 }

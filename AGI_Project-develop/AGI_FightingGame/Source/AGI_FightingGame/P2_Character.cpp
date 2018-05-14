@@ -23,7 +23,13 @@ AP2_Character::AP2_Character()
 	LeftFoot->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	RightFoot->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
+	LeftHand->SetRelativeLocation(FVector::ZeroVector);
+	RightHand->SetRelativeLocation(FVector::ZeroVector);
+	LeftFoot->SetRelativeLocation(FVector::ZeroVector);
+	RightFoot->SetRelativeLocation(FVector::ZeroVector);
+
 	P2CurrentState = EP2CurrentState::IDLE;
+
 
 	health = 100;
 }

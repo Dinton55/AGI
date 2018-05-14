@@ -1,0 +1,325 @@
+﻿Log file open, 04/27/18 14:18:00
+LogWindows: Failed to load 'aqProf.dll' (GetLastError=126)
+LogWindows: File 'aqProf.dll' does not exist
+LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi.dll' does not exist
+LogWindows: Failed to load 'VtuneApi32e.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi32e.dll' does not exist
+LogInit: Display: Running engine for game: AGI_FightingGame
+LogPlatformFile: Not using cached read wrapper
+LogInit: Display: RandInit(-1012592934) SRandInit(-1012592934).
+LogTaskGraph: Started task graph with 5 named threads and 14 total threads with 3 sets of task threads.
+LogStats: Stats thread started at 0.169803
+LogD3D11RHI: Aftermath initialized
+LogPluginManager: Mounting plugin Paper2D
+LogPluginManager: Mounting plugin LightPropagationVolume
+LogPluginManager: Mounting plugin CodeLiteSourceCodeAccess
+LogPluginManager: Mounting plugin GitSourceControl
+LogPluginManager: Mounting plugin KDevelopSourceCodeAccess
+LogPluginManager: Mounting plugin NullSourceCodeAccess
+LogPluginManager: Mounting plugin PerforceSourceControl
+LogPluginManager: Mounting plugin SubversionSourceControl
+LogPluginManager: Mounting plugin UObjectPlugin
+LogPluginManager: Mounting plugin VisualStudioSourceCodeAccess
+LogPluginManager: Mounting plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting plugin AssetManagerEditor
+LogPluginManager: Mounting plugin AudioCapture
+LogPluginManager: Mounting plugin FacialAnimation
+LogPluginManager: Mounting plugin GameplayTagsEditor
+LogPluginManager: Mounting plugin MobileLauncherProfileWizard
+LogPluginManager: Mounting plugin PluginBrowser
+LogPluginManager: Mounting plugin SpeedTreeImporter
+LogPluginManager: Mounting plugin AlembicImporter
+LogPluginManager: Mounting plugin CharacterAI
+LogPluginManager: Mounting plugin HTML5Networking
+LogPluginManager: Mounting plugin AndroidMedia
+LogPluginManager: Mounting plugin AvfMedia
+LogPluginManager: Mounting plugin MediaPlayerEditor
+LogPluginManager: Mounting plugin WmfMedia
+LogPluginManager: Mounting plugin TcpMessaging
+LogPluginManager: Mounting plugin UdpMessaging
+LogPluginManager: Mounting plugin LevelSequenceEditor
+LogPluginManager: Mounting plugin MatineeToLevelSequence
+LogPluginManager: Mounting plugin OnlineSubsystemGooglePlay
+LogPluginManager: Mounting plugin OnlineSubsystemIOS
+LogPluginManager: Mounting plugin OnlineSubsystem
+LogPluginManager: Mounting plugin OnlineSubsystemNull
+LogPluginManager: Mounting plugin OnlineSubsystemUtils
+LogPluginManager: Mounting plugin AndroidDeviceProfileSelector
+LogPluginManager: Mounting plugin AndroidMoviePlayer
+LogPluginManager: Mounting plugin AndroidPermission
+LogPluginManager: Mounting plugin AppleMoviePlayer
+LogPluginManager: Mounting plugin ArchVisCharacter
+LogPluginManager: Mounting plugin CableComponent
+LogPluginManager: Mounting plugin CustomMeshComponent
+LogPluginManager: Mounting plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting plugin GoogleCloudMessaging
+LogPluginManager: Mounting plugin ImmediatePhysics
+LogPluginManager: Mounting plugin IOSDeviceProfileSelector
+LogPluginManager: Mounting plugin LinuxDeviceProfileSelector
+LogPluginManager: Mounting plugin LocationServicesBPLibrary
+LogPluginManager: Mounting plugin MobilePatchingUtils
+LogPluginManager: Mounting plugin OculusVR
+LogPluginManager: Mounting plugin PhysXVehicles
+LogPluginManager: Mounting plugin ProceduralMeshComponent
+LogPluginManager: Mounting plugin RuntimePhysXCooking
+LogPluginManager: Mounting plugin SteamVR
+LogPluginManager: Mounting plugin WindowsMoviePlayer
+LogInit: Warning: Incompatible or missing module: UE4Editor-AGI_FightingGame.dll
+Running C:/Program Files/Epic Games/UE_4.17/Engine/Binaries/DotNET/UnrealBuildTool.exe AGI_FightingGame Development Win64 -project="C:/Users/Luke/Documents/REPOS/AGI/AGI_Project-develop/AGI_FightingGame/AGI_FightingGame.uproject" -editorrecompile -progress -NoHotReloadFromIDE
+Creating makefile for AGI_FightingGame (no existing makefile)
+@progress push 5%
+Parsing headers for AGI_FightingGameEditor
+  Running UnrealHeaderTool "C:\Users\Luke\Documents\REPOS\AGI\AGI_Project-develop\AGI_FightingGame\AGI_FightingGame.uproject" "C:\Users\Luke\Documents\REPOS\AGI\AGI_Project-develop\AGI_FightingGame\Intermediate\Build\Win64\AGI_FightingGameEditor\Development\AGI_FightingGameEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+Reflection code generated for AGI_FightingGameEditor in 7.0725107 seconds
+@progress pop
+Performing 18 actions (4 in parallel)
+BasicStateMachine.gen.cpp
+FighterGameInstance.gen.cpp
+CharStateManager.gen.cpp
+AGI_FightingGame.init.gen.cpp
+AGI_FightingGameGameMode.gen.cpp
+AGI_FightingGameCharacter.gen.cpp
+P2_Character.cpp
+P2_Controller.cpp
+FighterGameInstance.cpp
+CharStateManager.cpp
+BasicStateMachine.cpp
+AGI_FightingGameGameMode.cpp
+AGI_FightingGameCharacter.cpp
+AGI_FightingGame.cpp
+P2_Character.gen.cpp
+P2_Controller.gen.cpp
+[17/18] Link UE4Editor-AGI_FightingGame.dll
+[18/18] Link UE4Editor-AGI_FightingGame.lib
+   Creating library C:\Users\Luke\Documents\REPOS\AGI\AGI_Project-develop\AGI_FightingGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-AGI_FightingGame.lib and object C:\Users\Luke\Documents\REPOS\AGI\AGI_Project-develop\AGI_FightingGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-AGI_FightingGame.exp
+   Creating library C:\Users\Luke\Documents\REPOS\AGI\AGI_Project-develop\AGI_FightingGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-AGI_FightingGame.suppressed.lib and object C:\Users\Luke\Documents\REPOS\AGI\AGI_Project-develop\AGI_FightingGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-AGI_FightingGame.suppressed.exp
+Total build time: 24.48 seconds (Local executor: 9.09 seconds)
+LogInit: Using libcurl 7.47.1
+LogInit:  - built for x86_64-pc-win32
+LogInit:  - supports SSL with OpenSSL/1.0.2g
+LogInit:  - supports HTTP deflate (compression) using libz 1.2.8
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_LIBZ
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_IDN
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = false  - Libcurl will NOT verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+LogInit: Build: ++UE4+Release-4.17-CL-3658906
+LogInit: Engine Version: 4.17.2-3658906+++UE4+Release-4.17
+LogInit: Compatible Engine Version: 4.17.0-3573198+++UE4+Release-4.17
+LogInit: Net CL: 3573198
+LogDevObjectVersion: Number of dev versions registered: 16
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 2
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 20
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 28
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 0
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 0
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 19
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 4
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 0
+LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+LogDevObjectVersion:   Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 1
+LogDevObjectVersion:   Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 7
+LogInit: Compiled (64-bit): Sep 22 2017 13:47:16
+LogInit: Compiled with Visual C++: 19.00.24215.01
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE4+Release-4.17
+LogInit: Command line:  
+LogInit: Base directory: C:/Program Files/Epic Games/UE_4.17/Engine/Binaries/Win64/
+LogInit: Installed Engine Build: 1
+LogInit: Presizing for max 8388607 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogInit: Object subsystem initialized
+[2018.04.27-13.18.29:997][  0]LogInit: Selected Device Profile: [Windows]
+[2018.04.27-13.18.29:997][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2018.04.27-13.18.30:010][  0]LogInit: Computer: DESKTOP-PJF3GQ6
+[2018.04.27-13.18.30:010][  0]LogInit: User: Luke
+[2018.04.27-13.18.30:010][  0]LogInit: CPU Page size=4096, Cores=4
+[2018.04.27-13.18.30:010][  0]LogInit: High frequency timer resolution =3.421879 MHz
+[2018.04.27-13.18.30:011][  0]LogMemory: Memory total: Physical=15.9GB (16GB approx)
+[2018.04.27-13.18.30:011][  0]LogMemory: Platform Memory Stats for Windows
+[2018.04.27-13.18.30:011][  0]LogMemory: Process Physical Memory: 284.42 MB used, 284.42 MB peak
+[2018.04.27-13.18.30:011][  0]LogMemory: Process Virtual Memory: 275.77 MB used, 275.77 MB peak
+[2018.04.27-13.18.30:011][  0]LogMemory: Physical Memory: 7861.38 MB used,  8468.34 MB free, 16329.73 MB total
+[2018.04.27-13.18.30:011][  0]LogMemory: Virtual Memory: 729.14 MB used,  8468.34 MB free, 134217728.00 MB total
+[2018.04.27-13.18.30:330][  0]LogInit: Using OS detected language (en-GB).
+[2018.04.27-13.18.30:330][  0]LogInit: Using OS detected locale (en-GB).
+[2018.04.27-13.18.30:335][  0]LogTextLocalizationManager: No specific localization for 'en-GB' exists, so the 'en' localization will be used.
+[2018.04.27-13.18.31:151][  0]LogD3D11RHI: D3D11 adapters:
+[2018.04.27-13.18.31:202][  0]LogD3D11RHI:    0. 'NVIDIA GeForce GTX 1080' (Feature Level 11_0)
+[2018.04.27-13.18.31:202][  0]LogD3D11RHI:       8086/0/8164 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:2, VendorId:0x10de
+[2018.04.27-13.18.31:205][  0]LogD3D11RHI:    1. 'Microsoft Basic Render Driver' (Feature Level 11_0)
+[2018.04.27-13.18.31:205][  0]LogD3D11RHI:       0/0/8164 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
+[2018.04.27-13.18.31:205][  0]LogD3D11RHI: Chosen D3D11 Adapter: 0
+[2018.04.27-13.18.31:213][  0]LogD3D11RHI: Creating new Direct3DDevice
+[2018.04.27-13.18.31:213][  0]LogD3D11RHI:     GPU DeviceId: 0x1b80 (for the marketing name, search the web for "GPU Device Id")
+[2018.04.27-13.18.31:213][  0]LogWindows: EnumDisplayDevices:
+[2018.04.27-13.18.31:213][  0]LogWindows:    0. 'NVIDIA GeForce GTX 1080' (P:1 D:1)
+[2018.04.27-13.18.31:213][  0]LogWindows:    1. 'NVIDIA GeForce GTX 1080' (P:0 D:1)
+[2018.04.27-13.18.31:213][  0]LogWindows:    2. 'NVIDIA GeForce GTX 1080' (P:0 D:0)
+[2018.04.27-13.18.31:214][  0]LogWindows:    3. 'NVIDIA GeForce GTX 1080' (P:0 D:0)
+[2018.04.27-13.18.31:214][  0]LogWindows: DebugString: GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter FoundDriverCount:0 
+[2018.04.27-13.18.31:214][  0]LogD3D11RHI:     Adapter Name: NVIDIA GeForce GTX 1080
+[2018.04.27-13.18.31:214][  0]LogD3D11RHI:   Driver Version: Unknown (internal:Unknown, unified:Unknown)
+[2018.04.27-13.18.31:214][  0]LogD3D11RHI:      Driver Date: Unknown
+[2018.04.27-13.18.31:214][  0]LogRHI: Texture pool is 1361 MB (70% of 1945 MB)
+[2018.04.27-13.18.31:241][  0]LogD3D11RHI: Async texture creation enabled
+[2018.04.27-13.18.31:288][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 1)
+[2018.04.27-13.18.31:345][  0]LogShaderCompilers: Guid format shader working directory is -40 characters bigger than the processId version (../../../../../../Users/Luke/Documents/REPOS/AGI/AGI_Project-develop/AGI_FightingGame/Intermediate/Shaders/WorkingDirectory/3380/).
+[2018.04.27-13.18.31:345][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/Luke/AppData/Local/Temp/UnrealShaderWorkingDir/796F96F948FDFEC9E1B4779173B1013E/'.
+[2018.04.27-13.18.31:345][  0]LogShaderCompilers: Display: Using Local Shader Compiler.
+[2018.04.27-13.18.32:261][  0]LogTemp: Display: Loaded TP AllDesktopTargetPlatform
+[2018.04.27-13.18.32:311][  0]LogTemp: Display: Loaded TP MacClientTargetPlatform
+[2018.04.27-13.18.32:361][  0]LogTemp: Display: Loaded TP MacNoEditorTargetPlatform
+[2018.04.27-13.18.32:413][  0]LogTemp: Display: Loaded TP MacServerTargetPlatform
+[2018.04.27-13.18.32:465][  0]LogTemp: Display: Loaded TP MacTargetPlatform
+[2018.04.27-13.18.32:514][  0]LogTemp: Display: Loaded TP WindowsClientTargetPlatform
+[2018.04.27-13.18.32:566][  0]LogTemp: Display: Loaded TP WindowsNoEditorTargetPlatform
+[2018.04.27-13.18.32:617][  0]LogTemp: Display: Loaded TP WindowsServerTargetPlatform
+[2018.04.27-13.18.32:665][  0]LogTemp: Display: Loaded TP WindowsTargetPlatform
+[2018.04.27-13.18.32:717][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.04.27-13.18.32:768][  0]LogTemp: Display: Loaded TP Android_ASTCTargetPlatform
+[2018.04.27-13.18.32:819][  0]LogTemp: Display: Loaded TP Android_ATCTargetPlatform
+[2018.04.27-13.18.32:873][  0]LogTemp: Display: Loaded TP Android_DXTTargetPlatform
+[2018.04.27-13.18.32:921][  0]LogTemp: Display: Loaded TP Android_ETC1TargetPlatform
+[2018.04.27-13.18.32:987][  0]LogTemp: Display: Loaded TP Android_ETC2TargetPlatform
+[2018.04.27-13.18.33:088][  0]LogTemp: Display: Loaded TP Android_MultiTargetPlatform
+[2018.04.27-13.18.33:088][  0]LogTemp: Display: Loaded TP Android_PVRTCTargetPlatform
+[2018.04.27-13.18.33:128][  0]LogTemp: Display: Loaded TP HTML5TargetPlatform
+[2018.04.27-13.18.33:233][  0]LogTemp: Display: Loaded TP IOSTargetPlatform
+[2018.04.27-13.18.33:260][  0]LogTemp: Display: Loaded TP TVOSTargetPlatform
+[2018.04.27-13.18.33:309][  0]LogTemp: Display: Loaded TP LinuxClientTargetPlatform
+[2018.04.27-13.18.33:358][  0]LogTemp: Display: Loaded TP LinuxNoEditorTargetPlatform
+[2018.04.27-13.18.33:408][  0]LogTemp: Display: Loaded TP LinuxServerTargetPlatform
+[2018.04.27-13.18.33:459][  0]LogTemp: Display: Loaded TP LinuxTargetPlatform
+[2018.04.27-13.18.33:459][  0]LogTargetPlatformManager: Display: Building Assets For Windows
+[2018.04.27-13.18.34:111][  0]LogDerivedDataCache: Display: Max Cache Size: 512 MB
+[2018.04.27-13.18.34:483][  0]LogDerivedDataCache: Loaded boot cache 0.37s 93MB C:/Users/Luke/AppData/Local/UnrealEngine/4.17/DerivedDataCache/Boot.ddc.
+[2018.04.27-13.18.34:483][  0]LogDerivedDataCache: Display: Loaded Boot cache: C:/Users/Luke/AppData/Local/UnrealEngine/4.17/DerivedDataCache/Boot.ddc
+[2018.04.27-13.18.34:483][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/Luke/Documents/REPOS/AGI/AGI_Project-develop/AGI_FightingGame/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2018.04.27-13.18.34:483][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2018.04.27-13.18.34:484][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/Luke/Documents/REPOS/AGI/AGI_Project-develop/AGI_FightingGame/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2018.04.27-13.18.34:484][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2018.04.27-13.18.34:504][  0]LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2018.04.27-13.18.34:518][  0]LogDerivedDataCache: Using Local data cache path C:/Users/Luke/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2018.04.27-13.18.34:533][  0]LogMaterial: Verifying Global Shaders for PCD3D_SM5
+[2018.04.27-13.18.34:540][  0]LogSlate: Using Freetype 2.6.0
+[2018.04.27-13.18.34:542][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2018.04.27-13.18.34:543][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2018.04.27-13.18.35:398][  0]LogAssetRegistry: FAssetRegistry took 0.0298 seconds to start up
+[2018.04.27-13.18.35:614][  0]LogInit: Selected Device Profile: [Windows]
+[2018.04.27-13.18.35:977][  0]LogContentStreaming: Texture pool size is 0.00 MB
+[2018.04.27-13.18.36:420][  0]LogSimplygon: Simplygon DLL not present - disabling.
+[2018.04.27-13.18.36:487][  0]LogMeshReduction: Using SimplygonSwarm for distributed automatic mesh merging
+[2018.04.27-13.18.36:488][  0]LogMeshReduction: Using QuadricMeshReduction for automatic static mesh reduction
+[2018.04.27-13.18.36:488][  0]LogMeshReduction: No automatic skeletal mesh reduction module available
+[2018.04.27-13.18.36:488][  0]LogMeshReduction: No automatic mesh merging module available
+[2018.04.27-13.18.36:488][  0]LogMeshMerging: No automatic mesh merging module available
+[2018.04.27-13.18.37:089][  0]LogNetVersion: AGI_FightingGame , NetCL: 3573198, EngineNetVer: 2, GameNetVer: 0 (Checksum: 1367398240)
+[2018.04.27-13.18.37:439][  0]LogPackageName: Warning: String asset reference "S_ClothTarps_03.SM.Mesh.S_ClothTarps_03" is in short form, which is unsupported and -- even if valid -- resolving it will be really slow.
+[2018.04.27-13.18.37:439][  0]LogPackageName: Warning: Please consider resaving package in order to speed-up loading.
+[2018.04.27-13.18.37:439][  0]LogPackageLocalizationCache: Processed 5 localized package path(s) for 2 prioritized culture(s) in 0.116420 seconds
+[2018.04.27-13.18.37:448][  0]LogUObjectArray: 35825 objects as part of root set at end of initial load.
+[2018.04.27-13.18.37:448][  0]LogUObjectAllocator: 7529112 out of 0 bytes used by permanent object pool.
+[2018.04.27-13.18.37:448][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2018.04.27-13.18.37:527][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+[2018.04.27-13.18.40:767][  0]LogPackageName: SearchForPackageOnDisk took   0.225s, but failed to resolve S_ClothTarps_03.
+[2018.04.27-13.18.40:767][  0]LogPackageName: Warning: String asset reference "S_ClothTarps_03.SM.Mesh.S_ClothTarps_03" could not be resolved.
+[2018.04.27-13.18.41:347][  0]LogTcpMessaging: Initializing TcpMessaging bridge
+[2018.04.27-13.18.41:398][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2018.04.27-13.18.42:285][  0]LogAnimationCompression: Building Anim DDC data for AnimSequence /Game/AnimationAssets/Parasite/Animations/ParasiteBlocking/Blocking_Anim_mixamo_com.Blocking_Anim_mixamo_com
+[2018.04.27-13.18.42:293][  0]LogAnimationCompression: Building Anim DDC data for AnimSequence /Game/AnimationAssets/Parasite/Animations/ParasiteUppercut/Uppercut_Anim_mixamo_com.Uppercut_Anim_mixamo_com
+[2018.04.27-13.18.42:296][  0]LogAnimationCompression: Building Anim DDC data for AnimSequence /Game/AnimationAssets/Parasite/Animations/ParasiteJumpPunch/Jump_Punch_Anim_mixamo_com.Jump_Punch_Anim_mixamo_com
+[2018.04.27-13.18.42:298][  0]LogAnimationCompression: Building Anim DDC data for AnimSequence /Game/AnimationAssets/Parasite/Animations/ParasiteJumpKick/Hurricane_Kick_Anim_mixamo_com.Hurricane_Kick_Anim_mixamo_com
+[2018.04.27-13.18.42:302][  0]LogAnimationCompression: Building Anim DDC data for AnimSequence /Game/AnimationAssets/Parasite/Animations/ParasiteJump/Jumping_Anim_mixamo_com.Jumping_Anim_mixamo_com
+[2018.04.27-13.18.42:303][  0]LogAnimationCompression: Building Anim DDC data for AnimSequence /Game/AnimationAssets/Parasite/Animations/ParasiteIdle/Idle_Anim_mixamo_com.Idle_Anim_mixamo_com
+[2018.04.27-13.18.42:306][  0]LogAnimationCompression: Building Anim DDC data for AnimSequence /Game/AnimationAssets/Parasite/Animations/ParasiteCrouching/Crouch_Idle_Anim_mixamo_com.Crouch_Idle_Anim_mixamo_com
+[2018.04.27-13.18.42:308][  0]LogAnimationCompression: Building Anim DDC data for AnimSequence /Game/AnimationAssets/Parasite/Animations/ParasiteSweepKick/Leg_Sweep_Anim_mixamo_com.Leg_Sweep_Anim_mixamo_com
+[2018.04.27-13.18.42:313][  0]LogAnimationCompression: Building Anim DDC data for AnimSequence /Game/AnimationAssets/Parasite/Animations/ParasitePunching/Punching_Anim_mixamo_com.Punching_Anim_mixamo_com
+[2018.04.27-13.18.42:314][  0]LogAnimationCompression: Building Anim DDC data for AnimSequence /Game/AnimationAssets/Parasite/Animations/ParasiteMovingPunch/MovingHit_Anim_mixamo_com.MovingHit_Anim_mixamo_com
+[2018.04.27-13.18.42:320][  0]LogAnimationCompression: Building Anim DDC data for AnimSequence /Game/AnimationAssets/Parasite/Animations/ParasiteMovingKick/Moving_Kick_Anim_mixamo_com.Moving_Kick_Anim_mixamo_com
+[2018.04.27-13.18.42:323][  0]LogAnimationCompression: Building Anim DDC data for AnimSequence /Game/AnimationAssets/Parasite/Animations/ParasiteMoving/Walking_Anim_mixamo_com.Walking_Anim_mixamo_com
+[2018.04.27-13.18.42:324][  0]LogAnimationCompression: Building Anim DDC data for AnimSequence /Game/AnimationAssets/Parasite/Animations/ParasiteKicking/Roundhouse_Kick_Anim_mixamo_com.Roundhouse_Kick_Anim_mixamo_com
+[2018.04.27-13.18.42:649][  0]LogMaterial: Uniform references updated for custom material expression Custom.
+[2018.04.27-13.18.43:123][  0]SourceControl: Source control is disabled
+[2018.04.27-13.18.43:123][  0]SourceControl: Source control is disabled
+[2018.04.27-13.18.43:193][  0]SourceControl: Source control is disabled
+[2018.04.27-13.18.43:270][  0]SourceControl: Source control is disabled
+[2018.04.27-13.18.44:008][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2018.04.27-13.18.44:279][  0]LogOcInput: OculusInput pre-init called
+[2018.04.27-13.18.44:579][  0]LogEngine: Initializing Engine...
+[2018.04.27-13.18.44:582][  0]LogHMD: Failed to initialize OpenVR with code 110
+[2018.04.27-13.18.44:805][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
+[2018.04.27-13.18.44:806][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
+[2018.04.27-13.18.44:963][  0]LogAIModule: Creating AISystem for world Untitled
+[2018.04.27-13.18.44:981][  0]LogInit: XAudio2 using 'Speakers (High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2018.04.27-13.18.44:992][  0]LogInit: FAudioDevice initialized.
+[2018.04.27-13.18.45:086][  0]LogDerivedDataCache: Saved boot cache 0.09s 94MB C:/Users/Luke/AppData/Local/UnrealEngine/4.17/DerivedDataCache/Boot.ddc.
+[2018.04.27-13.18.45:099][  0]LogInit: Texture streaming: Enabled
+[2018.04.27-13.18.45:221][  0]LogEngineSessionManager: EngineSessionManager initialized
+[2018.04.27-13.18.45:221][  0]LogEngineSessionManager: EngineSessionManager sent abnormal shutdown report. Type=AbnormalShutdown, SessionId={2D9422F7-4E61-431C-0554-33946F9663AA}
+[2018.04.27-13.18.45:511][  0]LogWindowsTextInputMethodSystem: Display: IME system now deactivated.
+[2018.04.27-13.18.45:633][  0]LogInit: Transaction tracking system initialized
+[2018.04.27-13.18.46:074][  0]BlueprintLog: New page: Editor Load
+[2018.04.27-13.18.47:352][  0]LocalizationService: Localization service is disabled
+[2018.04.27-13.18.48:207][  0]LogConsoleResponse: Display: 
+[2018.04.27-13.18.48:428][  0]LogCook: Display: Max memory allowance for cook 16384mb min free memory 0mb
+[2018.04.27-13.18.48:428][  0]LogCook: Display: Mobile HDR setting 1
+[2018.04.27-13.18.48:430][  0]LogGameplayTags: Display: UGameplayTagsManager::DoneAddingNativeTags. DelegateIsBound: 0
+[2018.04.27-13.18.49:039][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Luke/Documents/REPOS/AGI/AGI_Project-develop/AGI_FightingGame/Content/' took 0.03s
+[2018.04.27-13.18.49:558][  0]SourceControl: Source control is disabled
+[2018.04.27-13.18.49:667][  0]LogSlate: Took 0.001453 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2018.04.27-13.19.03:323][  0]LogWindowsTextInputMethodSystem: Display: IME system now deactivated.
+[2018.04.27-13.19.03:340][  0]LogWindowsTextInputMethodSystem: Display: IME system now deactivated.
+[2018.04.27-13.19.04:890][  0]LogWindowsTextInputMethodSystem: Display: IME system now deactivated.
+[2018.04.27-13.19.04:922][  0]LoadErrors: New page: Loading package: /Game/SideScrollerCPP/Blueprints/SideScrollerCharacter
+[2018.04.27-13.19.04:939][  0]LogWindowsTextInputMethodSystem: Display: IME system now deactivated.
+[2018.04.27-13.19.04:942][  0]Cmd: MAP LOAD FILE="../../../../../../Users/Luke/Documents/REPOS/AGI/AGI_Project-develop/AGI_FightingGame/Content/SideScrollerCPP/Maps/SideScrollerExampleMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2018.04.27-13.19.04:943][  0]LightingResults: New page: Lighting Build
+[2018.04.27-13.19.04:994][  0]MapCheck: New page: Map Check
+[2018.04.27-13.19.04:994][  0]LightingResults: New page: Lighting Build
+[2018.04.27-13.19.05:214][  0]LogStats: FPlatformStackWalk::StackWalkAndDump -  0.207 s
+[2018.04.27-13.19.05:214][  0]LogOutputDevice: Error: === Handled ensure: ===
+[2018.04.27-13.19.05:214][  0]LogOutputDevice: Error: 
+[2018.04.27-13.19.05:214][  0]LogOutputDevice: Error: Ensure condition failed: ToPin->LinkedTo.Contains(this) [File:D:\Build\++UE4+Release-4.17+Compile\Sync\Engine\Source\Runtime\Engine\Private\EdGraph\EdGraphPin.cpp] [Line: 365]
+[2018.04.27-13.19.05:214][  0]LogOutputDevice: Error: UEdGraphPin::BreakLinkTo Pin 'Parent' on node 'AttachToComponent' not reciprocally linked with pin 'Mesh' on node 'Get Mesh'
+[2018.04.27-13.19.05:214][  0]LogOutputDevice: Error: Stack: 
+[2018.04.27-13.19.05:214][  0]LogOutputDevice: Error: UE4Editor-Core.dll!0x00000000BD1F3E36
+[2018.04.27-13.19.05:214][  0]LogOutputDevice: Error: UE4Editor-Core.dll!0x00000000BCF7C2D2
+[2018.04.27-13.19.05:214][  0]LogOutputDevice: Error: UE4Editor-Core.dll!0x00000000BCF94746
+[2018.04.27-13.19.05:214][  0]LogOutputDevice: Error: UE4Editor-Engine.dll!0x00000000BA051A13
+[2018.04.27-13.19.05:214][  0]LogOutputDevice: Error: UE4Editor-Engine.dll!0x00000000BA051839
+[2018.04.27-13.19.05:214][  0]LogOutputDevice: Error: UE4Editor-Engine.dll!0x00000000BA05D6B0
+[2018.04.27-13.19.05:214][  0]LogOutputDevice: Error: UE4Editor-Engine.dll!0x00000000BA050682
+[2018.04.27-13.19.05:214][  0]LogOutputDevice: Error: UE4Editor-CoreUObject.dll!0x00000000BE7425FF
+[2018.04.27-13.19.05:214][  0]LogOutputDevice: Error: UE4Editor-CoreUObject.dll!0x00000000BE6C35B9
+[2018.04.27-13.19.05:214][  0]LogOutputDevice: Error: UE4Editor-CoreUObject.dll!0x00000000BE6C1C55
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: UE4Editor-UnrealEd.dll!0x00000000B7AC4F27
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: UE4Editor-UnrealEd.dll!0x00000000B7B2BAF9
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: UE4Editor-UnrealEd.dll!0x00000000B7B55413
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: UE4Editor-UnrealEd.dll!0x00000000B7B47395
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: UE4Editor-UnrealEd.dll!0x00000000B7B2CC72
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: UE4Editor-UnrealEd.dll!0x00000000B83A5309
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: UE4Editor-UnrealEd.dll!0x00000000B7E2E77B
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: UE4Editor-UnrealEd.dll!0x00000000B7E2E3CF
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: UE4Editor-UnrealEd.dll!0x00000000B835D9CB
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: UE4Editor-UnrealEd.dll!0x00000000B832208F
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: UE4Editor.exe!0x00000000BE3A3866
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: UE4Editor.exe!0x00000000BE3A39EA
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: UE4Editor.exe!0x00000000BE3B02D9
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: UE4Editor.exe!0x00000000BE3B1C47
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: KERNEL32.DLL!0x00000000086D1FE4
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: ntdll.dll!0x000000000A30F061
+[2018.04.27-13.19.05:215][  0]LogOutputDevice: Error: 
+[2018.04.27-13.19.05:225][  0]LogStats:                SubmitErrorReport -  0.000 s
