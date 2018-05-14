@@ -1,7 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "CameraManager.h"
-
+#include "AGI_FightingGameCharacter.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values for this component's properties
 UCameraManager::UCameraManager()
@@ -18,6 +19,11 @@ UCameraManager::UCameraManager()
 void UCameraManager::BeginPlay()
 {
 	Super::BeginPlay();
+
+	APawn* p1 = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+	APawn* p2 = UGameplayStatics::GetPlayerPawn(GetWorld(), 1);
+
+	UE_LOG(LogTemp, Warning, TEXT("YEAST"));
 
 	// ...
 	
