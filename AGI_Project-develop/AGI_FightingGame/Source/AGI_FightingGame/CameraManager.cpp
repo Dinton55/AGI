@@ -11,6 +11,9 @@ UCameraManager::UCameraManager()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
+	CurrDist = 0.0f;
+	PrevDist = 0.0f;
+	InitDist = 0.0f;
 	// ...
 }
 
@@ -20,10 +23,11 @@ void UCameraManager::BeginPlay()
 {
 	Super::BeginPlay();
 
-	APawn* p1 = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
-	APawn* p2 = UGameplayStatics::GetPlayerPawn(GetWorld(), 1);
+	PlayerOne = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+	PlayerTwo = UGameplayStatics::GetPlayerPawn(GetWorld(), 1);
 
-	UE_LOG(LogTemp, Warning, TEXT("YEAST"));
+	//InitDist = FVector::Dist(PlayerOne->GetActorLocation(), PlayerTwo->GetActorLocation());
+
 
 	// ...
 	
@@ -35,6 +39,14 @@ void UCameraManager::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
+	//CurrDist = FVector::Dist(PlayerOne->GetActorLocation(), PlayerTwo->GetActorLocation());
+
+	float DistDiff = CurrDist - PrevDist;
+
+	UE_LOG(LogTemp, Warning, TEXT("DISTANCE: %f"), DistDiff);
+
 	// ...
+
+	PrevDist = CurrDist;
 }
 

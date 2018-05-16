@@ -132,7 +132,8 @@ protected:
 
 	float CurrentRightSpeed;
 
-	FORCEINLINE void SetStateToIdle() { P2CurrentState = EP2CurrentState::IDLE; }
+	void SetStateToIdle();
+
 	FORCEINLINE void SetStateToCrouch() { P2CurrentState = EP2CurrentState::CROUCHING; }
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Shield")

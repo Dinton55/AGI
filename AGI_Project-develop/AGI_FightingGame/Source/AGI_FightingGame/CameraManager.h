@@ -24,6 +24,12 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-		
+	APawn* PlayerOne;
+
+	APawn* PlayerTwo;
 	
+	float InitDist;
+	float PrevDist; // Distance in previous frame
+	float CurrDist; // Distance in current frame
+
 };

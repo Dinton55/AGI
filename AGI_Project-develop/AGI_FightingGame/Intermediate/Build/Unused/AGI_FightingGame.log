@@ -1,0 +1,10 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.props(31,3): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Makefile.props" cannot be imported again. It was already imported at "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.cpp.props (31,3)". This is most likely a build authoring error. This subsequent import will be ignored. [C:\Users\Luke\Documents\REPOS\AGI\AGI_Project-develop\AGI_FightingGame\Intermediate\ProjectFiles\UE4.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.props(31,3): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Makefile.props" cannot be imported again. It was already imported at "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.cpp.props (31,3)". This is most likely a build authoring error. This subsequent import will be ignored. [C:\Users\Luke\Documents\REPOS\AGI\AGI_Project-develop\AGI_FightingGame\Intermediate\ProjectFiles\AGI_FightingGame.vcxproj]
+  Performing 3 actions (4 in parallel)
+  CameraManager.cpp
+  [2/3] Link UE4Editor-AGI_FightingGame.dll
+  [3/3] Link UE4Editor-AGI_FightingGame.lib
+     Creating library C:\Users\Luke\Documents\REPOS\AGI\AGI_Project-develop\AGI_FightingGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-AGI_FightingGame.lib and object C:\Users\Luke\Documents\REPOS\AGI\AGI_Project-develop\AGI_FightingGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-AGI_FightingGame.exp
+     Creating library C:\Users\Luke\Documents\REPOS\AGI\AGI_Project-develop\AGI_FightingGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-AGI_FightingGame.suppressed.lib and object C:\Users\Luke\Documents\REPOS\AGI\AGI_Project-develop\AGI_FightingGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-AGI_FightingGame.suppressed.exp
+  Deploying AGI_FightingGameEditor Win64 Development...
+  Total build time: 3.85 seconds (Local executor: 2.57 seconds)

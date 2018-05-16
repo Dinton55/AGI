@@ -200,6 +200,8 @@ void AP2_Character::Kick()
 	if (P2CurrentState == EP2CurrentState::IDLE)
 	{
 		P2CurrentState = EP2CurrentState::KICKING;
+		LeftFoot->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+
 
 		UE_LOG(LogTemp, Warning, TEXT("KICK TIME: %f"), IdleKickTime);
 
@@ -210,6 +212,7 @@ void AP2_Character::Kick()
 	else if (P2CurrentState == EP2CurrentState::CROUCHING)
 	{
 		P2CurrentState = EP2CurrentState::SWEEPKICK;
+		LeftFoot->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 
 		FTimerHandle KickTimeHandle;
 		GetWorldTimerManager().SetTimer(
@@ -226,6 +229,7 @@ void AP2_Character::Kick()
 	else if (P2CurrentState == EP2CurrentState::JUMPING)
 	{
 		P2CurrentState = EP2CurrentState::JUMPKICK;
+		LeftFoot->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 
 		FTimerHandle KickTimeHandle;
 		GetWorldTimerManager().SetTimer(
@@ -239,6 +243,7 @@ void AP2_Character::Punch()
 	{
 
 		P2CurrentState = EP2CurrentState::PUNCHING;
+		RightHand->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 
 		FTimerHandle PunchTimeHandle;
 		GetWorldTimerManager().SetTimer(
@@ -247,6 +252,7 @@ void AP2_Character::Punch()
 	else if (P2CurrentState == EP2CurrentState::CROUCHING)
 	{
 		P2CurrentState = EP2CurrentState::UPPERCUT;
+		RightHand->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 
 		UE_LOG(LogTemp, Warning, TEXT("UPPERCUT"));
 
@@ -262,12 +268,22 @@ void AP2_Character::Punch()
 	//	GetWorldTimerManager().SetTimer(
 	//		PunchTimeHandle, this, &AP2_Character::SetStateToIdle, MovingPunchTime);
 	//}
-	else if (P2CurrentState == EP2CurrentState::JUMPING)
-	{
-		P2CurrentState = EP2CurrentState::JUMPPUNCH;
+	//else if (P2CurrentState == EP2CurrentState::JUMPING)
+	//{
+	//	P2CurrentState = EP2CurrentState::JUMPPUNCH;
 
-		FTimerHandle PunchTimeHandle;
-		GetWorldTimerManager().SetTimer(
-			PunchTimeHandle, this, &AP2_Character::SetStateToIdle, JumpPunchTime);
-	}
+	//	FTimerHandle PunchTimeHandle;
+	//	GetWorldTimerManager().SetTimer(
+	//		PunchTimeHandle, this, &AP2_Character::SetStateToIdle, JumpPunchTime);
+	//}
+}
+
+void AP2_Character::SetStateToIdle()
+{
+	P2CurrentState = EP2CurrentState::IDLE;
+
+	LeftHand->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	RightHand->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	LeftFoot->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	RightFoot->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 }

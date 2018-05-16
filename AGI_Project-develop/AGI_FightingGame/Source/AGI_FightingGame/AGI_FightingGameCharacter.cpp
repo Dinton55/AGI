@@ -151,21 +151,21 @@ void AAGI_FightingGameCharacter::Tick(float DeltaSeconds)
 	}
 }
 
-void AAGI_FightingGameCharacter::OnLeftHandOverlapBegin(UPrimitiveComponent * OverlappedComp, 
-	AActor * OtherActor, UPrimitiveComponent * OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
-{
-	AP2_Character* P2 = Cast<AP2_Character>(OtherActor);
-
-	if (P2)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("P2 VALID"));
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("P2 INVALID"));
-	}
-	
-}
+//void AAGI_FightingGameCharacter::OnLeftHandOverlapBegin(UPrimitiveComponent * OverlappedComp, 
+//	AActor * OtherActor, UPrimitiveComponent * OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
+//{
+//	AP2_Character* P2 = Cast<AP2_Character>(OtherActor);
+//
+//	if (P2)
+//	{
+//		UE_LOG(LogTemp, Warning, TEXT("P2 VALID"));
+//	}
+//	else
+//	{
+//		UE_LOG(LogTemp, Warning, TEXT("P2 INVALID"));
+//	}
+//	
+//}
 
 // Idle Punch
 void AAGI_FightingGameCharacter::OnMoveLeftPressed()
@@ -311,14 +311,14 @@ void AAGI_FightingGameCharacter::Punch()
 	//	GetWorldTimerManager().SetTimer(
 	//		PunchTimeHandle, this, &AAGI_FightingGameCharacter::SetStateToIdle, MovingPunchTime);
 	//}
-	else if (CurrentState == ECurrentState::JUMPING)
-	{
-		CurrentState = ECurrentState::JUMPPUNCH;
+	//else if (CurrentState == ECurrentState::JUMPING)
+	//{
+	//	CurrentState = ECurrentState::JUMPPUNCH;
 
-		FTimerHandle PunchTimeHandle;
-		GetWorldTimerManager().SetTimer(
-			PunchTimeHandle, this, &AAGI_FightingGameCharacter::SetStateToIdle, JumpPunchTime);
-	}
+	//	FTimerHandle PunchTimeHandle;
+	//	GetWorldTimerManager().SetTimer(
+	//		PunchTimeHandle, this, &AAGI_FightingGameCharacter::SetStateToIdle, JumpPunchTime);
+	//}
 }
 
 
