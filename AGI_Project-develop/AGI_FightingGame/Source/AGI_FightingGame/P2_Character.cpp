@@ -126,7 +126,6 @@ void AP2_Character::OnMoveLeftPressed()
 	//AddMovementInput(FVector(0.f, 1.f, 0.f), MovementSpeed);
 	P2CurrentState = EP2CurrentState::MOVING;
 
-	UE_LOG(LogTemp, Warning, TEXT("MOVING P2 LEFT"));
 
 	float NewRightSpeed = (MovementSpeed * 10.0f);
 	CurrentRightSpeed = NewRightSpeed;
@@ -143,7 +142,6 @@ void AP2_Character::OnMoveRightPressed()
 	//AddMovementInput(FVector(0.f, -1.f, 0.f), MovementSpeed);
 	P2CurrentState = EP2CurrentState::MOVING;
 
-	UE_LOG(LogTemp, Warning, TEXT("MOVING P2 RIGHT"));
 
 	float NewRightSpeed = -(MovementSpeed * 10.0f);
 	CurrentRightSpeed = NewRightSpeed;
@@ -161,7 +159,6 @@ void AP2_Character::OnCrouchPressed()
 		P2CurrentState != EP2CurrentState::SWEEPKICK)
 	{
 		P2CurrentState = EP2CurrentState::CROUCHING;
-		UE_LOG(LogTemp, Warning, TEXT("LADS"));
 	}
 }
 
@@ -178,7 +175,7 @@ void AP2_Character::CharacterJump()
 		P2CurrentState = EP2CurrentState::JUMPING;
 		FTimerHandle JumpTimeHandle;
 		GetWorldTimerManager().SetTimer(
-			JumpTimeHandle, this, &AP2_Character::SetStateToIdle, 3.0f);
+			JumpTimeHandle, this, &AP2_Character::SetStateToIdle, JumpTime);
 	}
 }
 
@@ -201,9 +198,6 @@ void AP2_Character::Kick()
 	{
 		P2CurrentState = EP2CurrentState::KICKING;
 		LeftFoot->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
-
-
-		UE_LOG(LogTemp, Warning, TEXT("KICK TIME: %f"), IdleKickTime);
 
 		FTimerHandle KickTimeHandle;
 		GetWorldTimerManager().SetTimer(
@@ -254,7 +248,6 @@ void AP2_Character::Punch()
 		P2CurrentState = EP2CurrentState::UPPERCUT;
 		RightHand->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 
-		UE_LOG(LogTemp, Warning, TEXT("UPPERCUT"));
 
 		FTimerHandle PunchTimeHandle;
 		GetWorldTimerManager().SetTimer(

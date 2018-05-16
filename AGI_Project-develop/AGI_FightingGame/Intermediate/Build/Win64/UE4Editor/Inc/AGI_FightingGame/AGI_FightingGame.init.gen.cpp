@@ -21,8 +21,8 @@ void EmptyLinkFunctionForGeneratedCodeAGI_FightingGame_init() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), nullptr, FName(TEXT("/Script/AGI_FightingGame")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x1E043E31;
-			Guid.B = 0x68552D40;
+			Guid.A = 0x8362ED1A;
+			Guid.B = 0xEDE75A49;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

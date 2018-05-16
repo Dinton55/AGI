@@ -16,12 +16,8 @@ void EmptyLinkFunctionForGeneratedCodeAGI_FightingGameCharacter() {}
 // Cross Module References
 	AGI_FIGHTINGGAME_API UEnum* Z_Construct_UEnum_AGI_FightingGame_ECurrentState();
 	UPackage* Z_Construct_UPackage__Script_AGI_FightingGame();
-	AGI_FIGHTINGGAME_API UFunction* Z_Construct_UFunction_AAGI_FightingGameCharacter_OnLeftHandOverlapBegin();
-	AGI_FIGHTINGGAME_API UClass* Z_Construct_UClass_AAGI_FightingGameCharacter();
-	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
-	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	AGI_FIGHTINGGAME_API UFunction* Z_Construct_UFunction_AAGI_FightingGameCharacter_P1_TakeDamage();
+	AGI_FIGHTINGGAME_API UClass* Z_Construct_UClass_AAGI_FightingGameCharacter();
 	AGI_FIGHTINGGAME_API UFunction* Z_Construct_UFunction_AAGI_FightingGameCharacter_P2_TakeDamage();
 	AGI_FIGHTINGGAME_API UClass* Z_Construct_UClass_AAGI_FightingGameCharacter_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
@@ -95,46 +91,10 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ECurrentState(ECurrentSt
 	{
 		UClass* Class = AAGI_FightingGameCharacter::StaticClass();
 		static const TNameNativePtrPair<ANSICHAR> AnsiFuncs[] = {
-			{ "OnLeftHandOverlapBegin", (Native)&AAGI_FightingGameCharacter::execOnLeftHandOverlapBegin },
 			{ "P1_TakeDamage", (Native)&AAGI_FightingGameCharacter::execP1_TakeDamage },
 			{ "P2_TakeDamage", (Native)&AAGI_FightingGameCharacter::execP2_TakeDamage },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, AnsiFuncs, ARRAY_COUNT(AnsiFuncs));
-	}
-	UFunction* Z_Construct_UFunction_AAGI_FightingGameCharacter_OnLeftHandOverlapBegin()
-	{
-		struct AGI_FightingGameCharacter_eventOnLeftHandOverlapBegin_Parms
-		{
-			UPrimitiveComponent* OverlappedComp;
-			AActor* OtherActor;
-			UPrimitiveComponent* OtherComp;
-			int32 OtherBodyIndex;
-			bool bFromSweep;
-			FHitResult SweepResult;
-		};
-		UObject* Outer = Z_Construct_UClass_AAGI_FightingGameCharacter();
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnLeftHandOverlapBegin"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x00480401, 65535, sizeof(AGI_FightingGameCharacter_eventOnLeftHandOverlapBegin_Parms));
-			UProperty* NewProp_SweepResult = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("SweepResult"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(CPP_PROPERTY_BASE(SweepResult, AGI_FightingGameCharacter_eventOnLeftHandOverlapBegin_Parms), 0x0010008008000182, Z_Construct_UScriptStruct_FHitResult());
-			CPP_BOOL_PROPERTY_BITMASK_STRUCT(bFromSweep, AGI_FightingGameCharacter_eventOnLeftHandOverlapBegin_Parms);
-			UProperty* NewProp_bFromSweep = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("bFromSweep"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(bFromSweep, AGI_FightingGameCharacter_eventOnLeftHandOverlapBegin_Parms), 0x0010000000000080, CPP_BOOL_PROPERTY_BITMASK(bFromSweep, AGI_FightingGameCharacter_eventOnLeftHandOverlapBegin_Parms), sizeof(bool), true);
-			UProperty* NewProp_OtherBodyIndex = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherBodyIndex"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(OtherBodyIndex, AGI_FightingGameCharacter_eventOnLeftHandOverlapBegin_Parms), 0x0010000000000080);
-			UProperty* NewProp_OtherComp = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherComp"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(OtherComp, AGI_FightingGameCharacter_eventOnLeftHandOverlapBegin_Parms), 0x0010000000080080, Z_Construct_UClass_UPrimitiveComponent_NoRegister());
-			UProperty* NewProp_OtherActor = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, AGI_FightingGameCharacter_eventOnLeftHandOverlapBegin_Parms), 0x0010000000000080, Z_Construct_UClass_AActor_NoRegister());
-			UProperty* NewProp_OverlappedComp = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OverlappedComp"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(OverlappedComp, AGI_FightingGameCharacter_eventOnLeftHandOverlapBegin_Parms), 0x0010000000080080, Z_Construct_UClass_UPrimitiveComponent_NoRegister());
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
-#if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("AGI_FightingGameCharacter.h"));
-			MetaData->SetValue(NewProp_SweepResult, TEXT("NativeConst"), TEXT(""));
-			MetaData->SetValue(NewProp_OtherComp, TEXT("EditInline"), TEXT("true"));
-			MetaData->SetValue(NewProp_OverlappedComp, TEXT("EditInline"), TEXT("true"));
-#endif
-		}
-		return ReturnFunction;
 	}
 	UFunction* Z_Construct_UFunction_AAGI_FightingGameCharacter_P1_TakeDamage()
 	{
@@ -154,6 +114,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ECurrentState(ECurrentSt
 			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
 			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Health"));
 			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("AGI_FightingGameCharacter.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("UFUNCTION()\n               void OnLeftHandOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,\n                       UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);"));
 #endif
 		}
 		return ReturnFunction;
@@ -197,7 +158,6 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ECurrentState(ECurrentSt
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= (EClassFlags)0x20800080u;
 
-				OuterClass->LinkChild(Z_Construct_UFunction_AAGI_FightingGameCharacter_OnLeftHandOverlapBegin());
 				OuterClass->LinkChild(Z_Construct_UFunction_AAGI_FightingGameCharacter_P1_TakeDamage());
 				OuterClass->LinkChild(Z_Construct_UFunction_AAGI_FightingGameCharacter_P2_TakeDamage());
 
@@ -226,8 +186,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ECurrentState(ECurrentSt
 				UProperty* NewProp_CurrentState = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CurrentState"), RF_Public|RF_Transient|RF_MarkAsNative) UEnumProperty(CPP_PROPERTY_BASE(CurrentState, AAGI_FightingGameCharacter), 0x0020080000020015, Z_Construct_UEnum_AGI_FightingGame_ECurrentState());
 				UProperty* NewProp_CurrentState_Underlying = new(EC_InternalUseOnlyConstructor, NewProp_CurrentState, TEXT("UnderlyingType"), RF_Public|RF_Transient|RF_MarkAsNative) UByteProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000);
 				UProperty* NewProp_MovementSpeed = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MovementSpeed"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(MovementSpeed, AAGI_FightingGameCharacter), 0x0020080000000005);
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AAGI_FightingGameCharacter_OnLeftHandOverlapBegin(), "OnLeftHandOverlapBegin"); // 1417714947
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AAGI_FightingGameCharacter_P1_TakeDamage(), "P1_TakeDamage"); // 1214717463
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AAGI_FightingGameCharacter_P1_TakeDamage(), "P1_TakeDamage"); // 961466589
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AAGI_FightingGameCharacter_P2_TakeDamage(), "P2_TakeDamage"); // 1772619433
 				OuterClass->ClassConfigName = FName(TEXT("Game"));
 				static TCppClassTypeInfo<TCppClassTypeTraits<AAGI_FightingGameCharacter> > StaticCppClassTypeInfo;
@@ -300,7 +259,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ECurrentState(ECurrentSt
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AAGI_FightingGameCharacter, 155633308);
+	IMPLEMENT_CLASS(AAGI_FightingGameCharacter, 377786310);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AAGI_FightingGameCharacter(Z_Construct_UClass_AAGI_FightingGameCharacter, &AAGI_FightingGameCharacter::StaticClass, TEXT("/Script/AGI_FightingGame"), TEXT("AAGI_FightingGameCharacter"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AAGI_FightingGameCharacter);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
