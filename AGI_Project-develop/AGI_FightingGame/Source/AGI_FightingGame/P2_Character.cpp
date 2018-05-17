@@ -189,6 +189,7 @@ void AP2_Character::OnBlockReleased()
 {
 	P2CurrentState = EP2CurrentState::IDLE;
 	ShieldMesh->SetVisibility(false);
+	bShieldActive = false;
 }
 
 // Idle Kick
